@@ -15,6 +15,7 @@ public class App
 
         // At this stage only one object is created with age having default int value
         Employee e1 = (Employee) context.getBean("employee");
+        e1.age = 20;
         System.out.println(e1.age);
 //        e1.code();
 
