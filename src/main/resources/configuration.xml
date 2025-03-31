@@ -4,27 +4,39 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--  Singleton - will create only single object and use it everywhere, created as soon as configuration loaded  -->
-    <!--  Prototype - will be created only when it is needed, multiple copies for multiple uses  -->
-    <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="singleton"></bean>  -->
-    <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>  -->
+<!--    Singleton - will create only single object and use it everywhere, created as soon as configuration loaded  -->
+<!--    Prototype - will be created only when it is needed, multiple copies for multiple uses  -->
+<!--    <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="singleton"></bean>  -->
+<!--    <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>  -->
 
-    <bean id="employee" class="org.javaproject.springworkflowxml.Employee">
-        <!--  Setter Injection  -->
-        <!--  <property name="age" value="21"/>  -->
-        <!--  <property name="laptop" ref="laptop"/>  -->
+<!--  autowire - explicit setter injection definition: priority 1, byName: will search and inject by name, byType: -->
+<!--  search and inject by type, if same type, 'primary:"true"' injected  -->
+    <bean id="employee" class="org.javaproject.springworkflowxml.Employee" autowire="byType">
+<!--        Setter Injection  -->
+<!--        <property name="age" value="21"/>  -->
+<!--        <property name="laptop" ref="laptop"/>  -->
 
-        <!--  <constructor-arg/> attributes - name, value, index, ref, type  -->
-        <!--  when using name, sequence need to maintained of <constructor-arg/> tags as of sequence in which  -->
-        <!--  parameterised constructor parameters are  -->
-        <!--  when using type, multiple parameters with same type may cause problem  -->
-        <!--  by default, without using above attributes, will need to maintain sequence  -->
-        <!--  using index attribute, more handy to use  -->
-        <constructor-arg index="0" value="21"/>
-        <constructor-arg index="1" ref="laptop"/>
+<!--        Constructor Injection  -->
+<!--        <constructor-arg/> attributes - name, value, index, ref, type -->
+<!--        when using name, sequence need to maintained of <constructor-arg/> tags as of sequence in which -->
+<!--        parameterised constructor parameters are  -->
+<!--        when using type, multiple parameters with same type may cause problem  -->
+<!--        by default, without using above attributes, will need to maintain sequence  -->
+<!--        using index attribute, more handy to use  -->
+<!--        <constructor-arg index="0" value="21"/>  -->
+<!--        <constructor-arg index="1" ref="laptop"/>  -->
+
+<!--        Autowiring  -->
+        <property name="age" value="21"/>
+<!--    when explicitly told as below tag, always priority 1, instead autowire    -->
+<!--        <property name="laptop" ref="laptop"/>-->
+
      </bean>
 
-    <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop">
+    <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop" primary="true">
+    </bean>
+
+    <bean id="desktop" class="org.javaproject.springworkflowxml.Desktop">
     </bean>
 
 </beans>
