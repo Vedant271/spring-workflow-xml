@@ -10,9 +10,19 @@
     <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>  -->
 
     <bean id="employee" class="org.javaproject.springworkflowxml.Employee">
-        <property name="age" value="21"/>
-        <property name="laptop" ref="laptop"/>
-    </bean>
+        <!--  Setter Injection  -->
+        <!--  <property name="age" value="21"/>  -->
+        <!--  <property name="laptop" ref="laptop"/>  -->
+
+        <!--  <constructor-arg/> attributes - name, value, index, ref, type  -->
+        <!--  when using name, sequence need to maintained of <constructor-arg/> tags as of sequence in which  -->
+        <!--  parameterised constructor parameters are  -->
+        <!--  when using type, multiple parameters with same type may cause problem  -->
+        <!--  by default, without using above attributes, will need to maintain sequence  -->
+        <!--  using index attribute, more handy to use  -->
+        <constructor-arg index="0" value="21"/>
+        <constructor-arg index="1" ref="laptop"/>
+     </bean>
 
     <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop">
     </bean>

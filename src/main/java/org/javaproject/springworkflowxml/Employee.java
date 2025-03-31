@@ -10,6 +10,12 @@ public class Employee {
         System.out.println("Employee Created");
     }
 
+    public Employee(int age, Laptop laptop) {
+        System.out.println("Parameterised Constructor Called");
+        this.age = age;
+        this.laptop = laptop;
+    }
+
     public int getAge() {
         return age;
     }
