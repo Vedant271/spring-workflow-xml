@@ -7,7 +7,15 @@
     <!--  Singleton - will create only single object and use it everywhere, created as soon as configuration loaded  -->
     <!--  Prototype - will be created only when it is needed, multiple copies for multiple uses  -->
     <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="singleton"></bean>  -->
-    <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>
+    <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>  -->
+
+    <bean id="employee" class="org.javaproject.springworkflowxml.Employee">
+        <property name="age" value="21">
+        </property>
+    </bean>
+
+    <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop">
+    </bean>
 
 </beans>
 
