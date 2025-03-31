@@ -6,22 +6,21 @@ public class Employee {
     private int age;
     private Computer laptop;
 
-//    public Employee(){
-//        System.out.println("Employee Created");
-//    }
+    public Employee(){
+        System.out.println("Employee Created");
+    }
 
-//    public Employee(int age, Computer laptop) {
-//        System.out.println("Parameterised Constructor Called");
-//        this.age = age;
-//        this.laptop = laptop;
-//    }
+    public Employee(int age, Computer laptop) {
+        System.out.println("Parameterised Constructor Called");
+        this.age = age;
+        this.laptop = laptop;
+    }
 
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        System.out.println("Setter Called");
         this.age = age;
     }
 

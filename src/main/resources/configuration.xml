@@ -36,7 +36,10 @@
     <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop" primary="true">
     </bean>
 
-    <bean id="desktop" class="org.javaproject.springworkflowxml.Desktop">
+<!--  Even desktop bean not getting used it is created  -->
+<!--  To avoid this make it lazy meaning it will be created only when used (separately or within other something like
+other bean) to utilize memory efficiently  -->
+    <bean id="desktop" class="org.javaproject.springworkflowxml.Desktop" lazy-init="true">
     </bean>
 
 </beans>

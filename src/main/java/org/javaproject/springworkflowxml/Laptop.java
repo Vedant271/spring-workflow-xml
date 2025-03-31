@@ -1,9 +1,9 @@
 package org.javaproject.springworkflowxml;
 
 public class Laptop implements Computer {
-//    public Laptop(){
-//        System.out.println("Laptop Created");
-//    }
+    public Laptop(){
+        System.out.println("Laptop Created");
+    }
 
     @Override
     public void compile(){
