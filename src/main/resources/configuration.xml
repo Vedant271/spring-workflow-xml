@@ -10,8 +10,8 @@
     <!--  <bean id="employee" class="org.javaproject.springworkflowxml.Employee" scope="prototype"></bean>  -->
 
     <bean id="employee" class="org.javaproject.springworkflowxml.Employee">
-        <property name="age" value="21">
-        </property>
+        <property name="age" value="21"/>
+        <property name="laptop" ref="laptop"/>
     </bean>
 
     <bean id="laptop" class="org.javaproject.springworkflowxml.Laptop">
