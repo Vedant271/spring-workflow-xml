@@ -13,11 +13,14 @@ public class App
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("configuration.xml");
 
-        Employee e1 = (Employee) context.getBean("employee");
+        Employee e1 = context.getBean("employee", Employee.class);
         System.out.println(e1.getAge());
         e1.code();
 
-//        Employee e2 = (Employee) context.getBean("employee");
-//        System.out.println(e2.age);
+//        Without type casting
+//        Desktop desktop = context.getBean("desktop", Desktop.class);
+
+//        Without id tag
+        Desktop desktop = context.getBean(Desktop.class);
     }
 }
